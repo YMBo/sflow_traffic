@@ -6,18 +6,25 @@ sflowtool version: 5.02
 Python version 2.7.5
 
 1.sflowtool将sflow报文转为netsFlow报文并发到本机指定端口（udp）    
-2.抓包程序获取指定端口的数据
+2.抓包程序获取指定端口的数据，根据ip+port获取服务之间的调用关系，并存储到mysql
 
 ## 启动
 > sh start.sh
 
 ## 目录结构
 
-> ├── addpath.py &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;//环境变量配置    
-├── conf.py&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;  //配置文件    
-├── dao.py&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;   //数据库操作    
-├── getTraffic.py &ensp;&ensp;&ensp;&ensp;&ensp;&ensp; //抓包文件    
-├── log.py&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;       //log日志配置文件    
-├── log_history &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;    //日志目录    
-├── requirements.txt        
-└── start.sh&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;      //启动脚本    
+
+> ├── addpath.py&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;//环境变量配置
+├── conf.py         &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;//配置文件
+├── dao.py          &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;   //数据库操作
+├── formart_server
+│   ├── __init__.py
+│   └── f_s.py      &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;   //对数据格式化以便存储到对应表里
+├── getTraffic.py&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;   //抓包文件
+├── get_service
+│   ├── __init__.py
+│   └── get_data.py&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;   //根据ip+port获取对应服务
+├── log.py              &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;   //日志文件
+├── log_history      &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;   //日志文件存储目录
+├── requirements.txt
+└── start.sh            &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;   //启动文件

@@ -6,11 +6,11 @@ import addpath
 import pcap
 import dpkt
 import sys
-from log import logger
 import threading
+from log import logger
 from IPy import IP
-from dao import dataBase
 from conf import TIME, NAME, AGENT
+from formart_server.f_s import formartS
 
 # 列出所有网络接口
 # pcap.findalldevs()
@@ -22,16 +22,30 @@ from conf import TIME, NAME, AGENT
 # pcap.pcap对象pc是个动态数据，通常结合for循环或是while循环不断读取数据包，数据包会返回时间戳及报文数据．
 # data = pcap.pcap(name='en0', promisc=True, immediate=True)
 # setfilter用来设置数据包过滤器，比如只想抓http的包，那就通过setfilter(tcp port 80)实现
-results = {}
 # 记录程序执行次数
 num = 0
 error = False
+#所有记录
+allRecord = []
+# 数量
+count = []
+
+
+def findin(arr, obj, obj1):
+    if obj1 in arr:
+        index = arr.index(obj1)
+    elif obj in arr:
+        index = arr.index(obj)
+    else:
+        count.append(0)
+        index = len(count) - 1
+        arr.append(obj)
+    count[index] += 1
 
 
 # 开始抓包
 def getIp():
     # 取默认网卡
-    global error
     # name = pcap.findalldevs()
     try:
         dataPack = pcap.pcap(name=NAME, promisc=True, immediate=True)
@@ -55,21 +69,40 @@ def getIp():
                 allData = data[0]
                 srcIp = str(IP(allData.src_addr))
                 dstIp = str(IP(allData.dst_addr))
-                obj = {
+                sport = allData.src_port
+                dport = allData.dst_port
+                # 源服务
+                # sServer = get_s(srcIp, sport)
+                # # 目的服务
+                # dServer = get_s(dstIp, dport)
+                # 插入数据库
+                tags = {
                     'srcIp': srcIp,
                     'dstIp': dstIp,
-                    'sport': allData.src_port,
-                    'dport': allData.dst_port,
-                    'count': 1
+                    'sport': sport,
+                    'dport': dport,
                 }
-                head = str(srcIp) + '=>' + str(dstIp)
-                try:
-                    currentObj = results[head]
-                except KeyError:
-                    results[head] = obj
-                else:
-                    currentObj['count'] = currentObj['count'] + 1
+                tags2 = {
+                    'srcIp': tags['dstIp'],
+                    'dstIp': tags['srcIp'],
+                    'sport': tags['dport'],
+                    'dport': tags['sport'],
+                }
+                findin(allRecord, tags, tags2)
+                # dataBase.insert(tags, fields)
+
         dataPack.close()
+
+
+# 清空结果
+def clearResult():
+    global allRecord, count, num
+    num += 1
+    logger.info('--------------------------第%s次-----------------------------',
+                num)
+    formartS(allRecord, count)
+    allRecord = []
+    count = []
 
 
 # 定时器
@@ -80,27 +113,6 @@ def setInterval(fun, time=TIME):
     timer = threading.Timer(time, setInterval, (fun, time))
     fun()
     timer.start()
-
-
-# 格式化数据,必须按这个顺序，入库格式
-def formatData():
-    global results
-    return [(results[x]['srcIp'], results[x]['dstIp'], results[x]['sport'],
-             results[x]['dport'], results[x]['count'], AGENT) for x in results]
-
-
-# 清空results
-def clearResult():
-    global results, num
-    num += 1
-    logger.info('--------------------------第%s次-----------------------------',
-                num)
-    data = formatData()
-    dataBase.clearTable()
-    if len(data) != 0:
-        dataBase.insert(data)
-        results = {}
-        logger.info('%ss 清除result', TIME)
 
 
 def main():
