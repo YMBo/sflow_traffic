@@ -14,17 +14,18 @@ Python version 2.7.5
 ## 目录结构
 
 
-> ├── addpath.py&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;//环境变量配置
-├── conf.py         &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;//配置文件
-├── dao.py          &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;   //数据库操作
-├── formart_server
-│   ├── __init__.py
-│   └── f_s.py      &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;   //对数据格式化以便存储到对应表里
-├── getTraffic.py&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;   //抓包文件
-├── get_service
-│   ├── __init__.py
-│   └── get_data.py&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;   //根据ip+port获取对应服务
-├── log.py              &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;   //日志文件
-├── log_history      &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;   //日志文件存储目录
-├── requirements.txt
-└── start.sh            &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;   //启动文件
+> ├── addpath.py&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;//环境变量配置     
+├── conf.py         &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;//配置文件    
+├── dao.py          &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;   //数据库操作    
+├── formart_server    
+│   ├── __init__.py    
+│   └── f_s.py      &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;   //对数据格式化以便存储到对应表里     
+        ├── getTraffic.py&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;   //抓包文件     
+├── get_service    
+│   ├── __init__.py    
+│   └── get_data.py&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;   //根据ip+port获取对应服务    
+├── log.py              &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;   //日志文件    
+├── log_history      &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;   //日志文件存储目录     
+├── requirements.txt     
+└── start.sh            &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;   //启动文件     
+
