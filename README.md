@@ -14,7 +14,7 @@ Python version 2.7.5
 ## 目录结构
 
 
-├── addpath.py                                  //环境变量配置|     
+> ├── addpath.py                                  //环境变量配置|     
 ├── conf.py                                     //配置文件|    
 ├── dao.py                                      //数据库操作|    
 ├── formart_server    
