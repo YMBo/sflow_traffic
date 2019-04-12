@@ -1,5 +1,5 @@
 # sflow_traffic
-python解析sflow报文并存储到mysql
+python解析sflow或TCP报文并存储到mysql，可多个机器部署
 
 ## 说明
 sflowtool version: 5.02    
