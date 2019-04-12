@@ -29,3 +29,20 @@ Python version 2.7.5
 ├── requirements.txt     
 └── start.sh                                    //启动文件     
 
+├── addpath.py 
+├── conf.py 
+├── dao.py 
+├── formart_server 
+│   ├── init.py 
+│   └── f_s.py 
+├── getDefaultIp 
+│   ├── init.py 
+│   ├── getDefaultIp.py 
+├── getTraffic.py 
+├── get_service 
+│   ├── init.py 
+│   └── get_data.py 
+├── log.py 
+├── log_history 
+├── requirements.txt 
+└── start.sh
