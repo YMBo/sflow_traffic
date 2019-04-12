@@ -28,20 +28,29 @@ Python version 2.7.5
 ├── log_history                                 //日志文件存储目录     
 ├── requirements.txt     
 └── start.sh                                    //启动文件     
-* ├── addpath.py
+
+```
+.
+├── README.md
+├── addpath.py
 ├── conf.py
 ├── dao.py
 ├── formart_server
-│   ├── init.py
-│   └── f_s.py
+│   ├── __init__.py
+│   └── f_s.py
 ├── getDefaultIp
-│   ├── init.py
-│   ├── getDefaultIp.py
+│   ├── __init__.py
+│   ├── __init__.pyc
+│   ├── getDefaultIp.py
+│   ├── getDefaultIp.pyc
+│   └── getIp.pyc
 ├── getTraffic.py
 ├── get_service
-│   ├── init.py
-│   └── get_data.py
+│   ├── __init__.py
+│   └── get_data.py
 ├── log.py
 ├── log_history
 ├── requirements.txt
-└── start.sh
+├── start.sh
+└── t.txt
+```
