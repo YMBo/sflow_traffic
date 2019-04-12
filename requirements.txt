@@ -1,6 +1,6 @@
 dpkt==1.9.2
 IPy==0.83
 MySQL-python==1.2.5
+netifaces==0.10.9
 pypcap==1.2.2
 requests==2.21.0
-influxdb==5.2.1
