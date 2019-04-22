@@ -7,11 +7,21 @@ Python version 2.7.5
 抓包程序获取的数据，根据ip+port获取服务之间的调用关系，并存储到mysql
 
 可以抓取两种报文
-* sflow报文 调用start.sh的sflowactive ，同时需要下载sflowtool
-    * sflowtool将sflow报文转为netsFlow报文并发到本机指定端口（udp）    
-    * getTraffic文件getIp函数里调用parseSflow函数
-* 经过GRE封装过的报文 调用start.sh的trafficActive函数即可 
-    * getTraffic文件getIp函数里调用parseTCP函数
+* sflow报文 调用`start.sh`的`sflowactive` ，同时需要下载`sflowtool`
+    * `sflowtool`将`sflow`报文转为`netsFlow`报文并发到本机指定端口（udp）    
+    * `getTraffic`文件`getIp`函数里调用`parseSflow`函数
+* 经过GRE封装过的报文 调用`start.sh`的`trafficActive`函数即可 
+    * `getTraffic`文件`getIp`函数里调用`parseTCP`函数
+
+## 补充
+关于两种GRE格式解析，我遇到的[问题](https://segmentfault.com/q/1010000018911392)  
+针对这个问题收到的启发：  
+	* 如果遇到类似dpkt解析不了的`GRE`报文（不限于GRE），可以按照以下方式进行扩展：  
+			``` python
+				ETH_TYPE_ERSPAN1 = 0x88be    # 指的是protocol Type的值
+				...
+				Ethernet.set_type(ETH_TYPE_ERSPAN1, Ethernet)
+			```
 
 
 ## 启动
