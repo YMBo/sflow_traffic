@@ -14,14 +14,13 @@ Python version 2.7.5
     * `getTraffic`文件`getIp`函数里调用`parseTCP`函数
 
 ## 补充
-关于两种GRE格式解析，我遇到的[问题](https://segmentfault.com/q/1010000018911392)  
-针对这个问题收到的启发：  
-	* 如果遇到类似dpkt解析不了的`GRE`报文（不限于GRE），可以按照以下方式进行扩展：  
-	```javascript
-	ETH_TYPE_ERSPAN1 = 0x88be    # 指的是protocol Type的值  
-	...  
-	Ethernet.set_type(ETH_TYPE_ERSPAN1, Ethernet)  
-	```
+关于两种GRE格式解析，我遇到的[问题](https://segmentfault.com/q/1010000018911392)   
+如果遇到类似dpkt解析不了的`GRE`报文（不限于GRE），可以按照以下方式进行扩展：  
+```javascript
+ETH_TYPE_ERSPAN1 = 0x88be    # 指的是protocol Type的值  
+...  
+Ethernet.set_type(ETH_TYPE_ERSPAN1, Ethernet)  
+```
 
 
 ## 启动
