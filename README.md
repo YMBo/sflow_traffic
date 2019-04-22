@@ -1,9 +1,9 @@
 # sflow_traffic
-python解析sflow报文并存储到mysql
+python解析sflow或TCP报文并存储到mysql，可多个机器部署
 
 ## 说明
-sflowtool version: 5.02
-Python version 2.7.5
+sflowtool version: 5.02    
+Python version 2.7.5    
 抓包程序获取的数据，根据ip+port获取服务之间的调用关系，并存储到mysql
 
 可以抓取两种报文
