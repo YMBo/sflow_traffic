@@ -18,9 +18,10 @@ Python version 2.7.5
 针对这个问题收到的启发：  
 	* 如果遇到类似dpkt解析不了的`GRE`报文（不限于GRE），可以按照以下方式进行扩展：  
 			```
-				ETH_TYPE_ERSPAN1 = 0x88be    # 指的是protocol Type的值
-				...
-				Ethernet.set_type(ETH_TYPE_ERSPAN1, Ethernet)
+				ETH_TYPE_ERSPAN1 = 0x88be    # 指的是protocol Type的值  
+				...  
+				Ethernet.set_type(ETH_TYPE_ERSPAN1, Ethernet)  
+				
 			```
 
 
