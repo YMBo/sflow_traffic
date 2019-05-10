@@ -3,7 +3,7 @@
 # influxDB配置
 # influxDB_HOST = "xx"
 # influxDB_PORT = xx
-# influxDB_DB = "xx"
+# influxDB_DB = "test"
 # influxDB_MEASUREMENT = "traffic_mes"
 # influxDB_USER = ""
 # influxDB_PASSWORD = ""
@@ -30,17 +30,17 @@ MYSQL_DB = "xx"
 MYSQL_USER = "xx"
 MYSQL_PASSWORD = "xx"
 # 存储目标服务器测试
-# MYSQL_HOST = "xx"
-# MYSQL_PORT = xx
-# MYSQL_DB = "xx"
-# MYSQL_USER = "xx"
-# MYSQL_PASSWORD = "xx"
+# MYSQL_HOST = "10.103.17.6"
+# MYSQL_PORT = 3306
+# MYSQL_DB = "ydo"
+# MYSQL_USER = "root"
+# MYSQL_PASSWORD = "root"
 # 本地
 # MYSQL_HOST = "localhost"
 # MYSQL_PORT = 3306
 # MYSQL_DB = "test"
 # MYSQL_USER = "root"
-# MYSQL_PASSWORD = "xx"
+# MYSQL_PASSWORD = "17611132464"
 
 # ip port表
 MYSQL_TABLE_IP = "trafficMes_ip"
@@ -51,11 +51,11 @@ MYSQL_TABLE_SERVICE = "trafficMes_service"
 # 服务中间表
 MYSQL_TABLE_SERVICESHIP = "trafficMes_serverShip"
 
-# 多少秒更新一次
-TIME = 12 * 60 * 60 * 1
+# 每天定时更新
+# TIME = 12 * 60 * 60 * 1
+TIME = '00:00:00'
 
 # 网卡名
-NAME = "lo"
+# NAME = "lo"
+NAME = "eth0"
 
-# 机房
-AGENT = "xxx"
