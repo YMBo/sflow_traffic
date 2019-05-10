@@ -38,13 +38,13 @@ Ethernet.set_type(ETH_TYPE_ERSPAN1, Ethernet)
 ├── getDefaultIp
 │   ├── __init__.py
 │   ├── getDefaultIp.py                 //获取抓包网卡ip
-├── getTraffic.py 						//主程序
+├── getTraffic.py 						    //主程序
 ├── get_service
 │   ├── __init__.py
 │   └── get_data.py                     //根据ip+port获取对应服务
 ├── log.py                              //日志配置 
 ├── log_history                         //日志文件存储目录    
-├── intervalTime.py 				//自定义定时器，每天指定时间执行任务
+├── intervalTime.py 				          //自定义定时器，每天指定时间执行任务
 ├── requirements.txt
 ├── start.sh                            //启动文件  
 ```
