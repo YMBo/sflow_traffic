@@ -8,10 +8,11 @@ from dpkt.ethernet import Ethernet
 from dpkt.ip import IP as dpktIP
 import dpkt
 import sys
-import threading
 from log import logger
 from IPy import IP
 from conf import TIME, NAME
+from datetime import datetime, timedelta
+from intervalTime import Timer
 from formart_server.f_s import formartS
 from getDefaultIp.getDefaultIp import getDefaultIp
 ETH_TYPE_ERSPAN1 = 0x88be
@@ -134,8 +135,11 @@ def getIp():
             Ethernet_pack = Ethernet(pdata)
             # 扩展dpkt解析ERSPAN数据
             Ethernet.set_type(ETH_TYPE_ERSPAN1, Ethernet)
-            parseTCP(Ethernet_pack)
+            try:
+                parseTCP(Ethernet_pack)
             # dataBase.insert(tags, fields)
+            except Exception as e:
+                pass
 
         dataPack.close()
 
@@ -153,19 +157,28 @@ def clearResult():
 
 
 # 定时器
-def setInterval(fun, time=TIME):
-    if error:
-        logger.error('连接网卡失败，强制退出')
-        sys.exit(1)
-    timer = threading.Timer(time, setInterval, (fun, time))
-    fun()
-    timer.start()
+# def setInterval(fun, time=TIME):
+#     if error:
+#         logger.error('连接网卡失败，强制退出')
+#         sys.exit(1)
+#     timer = threading.Timer(time, setInterval, (fun, time))
+#     fun()
+#     timer.start()
 
 
 def main():
-    if not getDefaultIp():
+    ip = getDefaultIp()
+    if not ip:
         return
-    setInterval(clearResult)
+    # 保证清表在三台机器数据填充前完成,清表在望京机房提前5分钟完成
+    time = TIME
+    if '10.136' in ip:
+        cday = datetime.strptime('2019-3-3 ' + time, '%Y-%m-%d %H:%M:%S')
+        cday = cday - timedelta(minutes=5)
+        time = cday.strftime('%H:%M:%S')
+    logger.info('设置时间：%s', time)
+    t = Timer(clearResult, time)
+    t.start()
     getIp()
 
 
