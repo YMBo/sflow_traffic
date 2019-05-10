@@ -47,4 +47,7 @@ sflowactive(){
         sflow
     fi
 }
-sflowactive
+# sflowactive
+
+# 处理正常TCP报文
+openT
