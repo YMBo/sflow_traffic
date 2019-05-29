@@ -30,17 +30,17 @@ MYSQL_DB = "xx"
 MYSQL_USER = "xx"
 MYSQL_PASSWORD = "xx"
 # 存储目标服务器测试
-# MYSQL_HOST = "10.103.17.6"
-# MYSQL_PORT = 3306
-# MYSQL_DB = "ydo"
-# MYSQL_USER = "root"
-# MYSQL_PASSWORD = "root"
+# MYSQL_HOST = "xxxx"
+# MYSQL_PORT = 2332
+# MYSQL_DB = "sss"
+# MYSQL_USER = "ccc"
+# MYSQL_PASSWORD = "ddd"
 # 本地
 # MYSQL_HOST = "localhost"
 # MYSQL_PORT = 3306
 # MYSQL_DB = "test"
 # MYSQL_USER = "root"
-# MYSQL_PASSWORD = "17611132464"
+# MYSQL_PASSWORD = "aaa"
 
 # ip port表
 MYSQL_TABLE_IP = "trafficMes_ip"
