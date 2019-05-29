@@ -9,11 +9,11 @@
 # influxDB_PASSWORD = ""
 
 # id和path数据库表
-DATA_MYSQL_HOST = '10.103.17.12'
-DATA_MYSQL_PROT = '3306'
-DATA_MYSQL_DB = "ydop"
-DATA_MYSQL_USER = "ydop"
-DATA_MYSQL_PASSWOR = "ydop"
+DATA_MYSQL_HOST = 'xxx'
+DATA_MYSQL_PROT = 'xx'
+DATA_MYSQL_DB = "xx"
+DATA_MYSQL_USER = "xx"
+DATA_MYSQL_PASSWOR = "xxx"
 # 服务表
 DATA_NODES_TABLE = 'btree_nodes'
 # instance  服务实例
@@ -26,21 +26,21 @@ DATA_SOURCE_SHIP_TABLE = 'cmdb_nodehostship'
 # k8s服务
 DATA_SOURCE_K8S = 'btree_path_k8s'
 
-MYSQL_HOST = "10.103.17.12"
-MYSQL_PORT = 3306
-MYSQL_DB = "ydop"
-MYSQL_USER = "ydop"
-MYSQL_PASSWORD = "ydop"
+MYSQL_HOST = "vvv"
+MYSQL_PORT = 223
+MYSQL_DB = "xx"
+MYSQL_USER = "xx"
+MYSQL_PASSWORD = "xx"
 # 存储目标服务器测试
-# MYSQL_HOST = "10.103.17.6"
-# MYSQL_PORT = 3306
-# MYSQL_DB = "ydo"
-# MYSQL_USER = "root"
-# MYSQL_PASSWORD = "root"
+# MYSQL_HOST = "1xxx"
+# MYSQL_PORT = 123
+# MYSQL_DB = "vv"
+# MYSQL_USER = "vv"
+# MYSQL_PASSWORD = "vv"
 # 本地
 # MYSQL_HOST = "localhost"
 # MYSQL_PORT = 3306
-# MYSQL_DB = "test"
+# MYSQL_DB = "df"
 # MYSQL_USER = "root"
 # MYSQL_PASSWORD = "17611132464"
 
@@ -60,8 +60,3 @@ TIME = '00:00:00'
 # 网卡名
 # NAME = "lo"
 NAME = "eth0"
-
-# 望京机房
-# AGENT = "10.136.131.8"
-# 昌平机房
-AGENT = "10.126.2.5"
