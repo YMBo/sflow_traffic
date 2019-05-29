@@ -42,7 +42,7 @@ MYSQL_PASSWORD = "xx"
 # MYSQL_PORT = 3306
 # MYSQL_DB = "df"
 # MYSQL_USER = "root"
-# MYSQL_PASSWORD = "17611132464"
+# MYSQL_PASSWORD = "xxx"
 
 # ip port表
 MYSQL_TABLE_IP = "trafficMes_ip"
