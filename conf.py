@@ -1,7 +1,7 @@
 # -*- coding:utf8 -*-
 
 # influxDB配置
-# influxDB_HOST = "10.60.110.119"
+# influxDB_HOST = "xx"
 # influxDB_PORT = 8086
 # influxDB_DB = "test"
 # influxDB_MEASUREMENT = "traffic_mes"
