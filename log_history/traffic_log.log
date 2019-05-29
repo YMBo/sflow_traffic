@@ -1,0 +1,20 @@
+INFO: traffic_log 2019-05-13 15:59:10,512 processid: 27818  funcname: getDefaultIp  lineno:17 网卡  en0 ip 为  10.60.110.165
+INFO: traffic_log 2019-05-13 15:59:49,298 processid: 27818  funcname: setSecond  lineno:47 当前时间：2019-05-13 15:59:49.297998
+INFO: traffic_log 2019-05-13 15:59:49,298 processid: 27818  funcname: setSecond  lineno:48 下次间隔（秒）：10.702002
+INFO: traffic_log 2019-05-13 16:00:01,281 processid: 27818  funcname: setSecond  lineno:47 当前时间：2019-05-13 16:00:01.281290
+INFO: traffic_log 2019-05-13 16:00:01,281 processid: 27818  funcname: setSecond  lineno:48 下次间隔（秒）：86398.71871
+INFO: traffic_log 2019-05-13 15:59:40,108 processid: 27991  funcname: getDefaultIp  lineno:17 网卡  en0 ip 为  10.60.110.165
+INFO: traffic_log 2019-05-13 16:00:17,459 processid: 27991  funcname: setSecond  lineno:47 当前时间：2019-05-13 16:00:17.459013
+INFO: traffic_log 2019-05-13 16:00:17,459 processid: 27991  funcname: setSecond  lineno:48 下次间隔（秒）：86382.540987
+INFO: traffic_log 2019-05-13 16:03:34,599 processid: 28301  funcname: getDefaultIp  lineno:17 网卡  en0 ip 为  10.60.110.165
+INFO: traffic_log 2019-05-13 16:04:59,090 processid: 28429  funcname: getDefaultIp  lineno:17 网卡  en0 ip 为  10.60.110.165
+INFO: traffic_log 2019-05-13 16:05:41,829 processid: 28530  funcname: getDefaultIp  lineno:17 网卡  en0 ip 为  10.60.110.165
+INFO: traffic_log 2019-05-13 16:06:23,060 processid: 28637  funcname: getDefaultIp  lineno:17 网卡  en0 ip 为  10.60.110.165
+INFO: traffic_log 2019-05-13 16:12:10,595 processid: 28892  funcname: getDefaultIp  lineno:17 网卡  en0 ip 为  10.60.110.165
+INFO: traffic_log 2019-05-13 16:14:49,152 processid: 29044  funcname: getDefaultIp  lineno:17 网卡  en0 ip 为  10.60.110.165
+INFO: traffic_log 2019-05-13 16:15:30,887 processid: 29158  funcname: getDefaultIp  lineno:17 网卡  en0 ip 为  10.60.110.165
+INFO: traffic_log 2019-05-13 19:25:35,070 processid: 14241  funcname: getDefaultIp  lineno:18 网卡  en0 ip 为  10.60.110.165
+INFO: traffic_log 2019-05-13 19:26:33,010 processid: 14401  funcname: getDefaultIp  lineno:18 网卡  en0 ip 为  10.60.110.165
+INFO: traffic_log 2019-05-13 19:26:53,035 processid: 14401  funcname: formartS  lineno:215 开始存储数据,望京机房先清表再存
+INFO: traffic_log 2019-05-13 19:28:52,860 processid: 14729  funcname: getDefaultIp  lineno:18 网卡  en0 ip 为  10.60.110.165
+INFO: traffic_log 2019-05-13 19:28:54,882 processid: 14729  funcname: formartS  lineno:215 开始存储数据,望京机房先清表再存

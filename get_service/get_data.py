@@ -49,6 +49,18 @@ class UseData(object):
                     self.sourceData[x[0]].append(x[1])
                 else:
                     self.sourceData[x[0]] = [x[1]]
+            # k8s的ip和路径对应
+            sql3 = '''
+                select k8s.container_ip,k8s.path from
+                {0} k8s
+            '''.format(conf.DATA_SOURCE_K8S)
+            cursor.execute(sql3)
+            # ip+service
+            for x in list(cursor.fetchall()):
+                if self.sourceData.has_key(x[0]):
+                    self.sourceData[x[0]].append(x[1])
+                else:
+                    self.sourceData[x[0]] = [x[1]]
         except Exception as e:
             logger.error("ip服务对应关系表读取失败！", )
             print(e)

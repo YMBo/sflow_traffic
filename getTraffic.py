@@ -14,7 +14,7 @@ from conf import TIME, NAME
 from datetime import datetime, timedelta
 from intervalTime import Timer
 from formart_server.f_s import formartS
-from getDefaultIp.getDefaultIp import getDefaultIp
+from getDefaultIp.getDefaultIp import hostip
 ETH_TYPE_ERSPAN1 = 0x88be
 
 # 列出所有网络接口
@@ -167,12 +167,11 @@ def clearResult():
 
 
 def main():
-    ip = getDefaultIp()
-    if not ip:
+    if not hostip:
         return
     # 保证清表在三台机器数据填充前完成,清表在望京机房提前5分钟完成
     time = TIME
-    if '10.136' in ip:
+    if '10.136' in hostip:
         cday = datetime.strptime('2019-3-3 ' + time, '%Y-%m-%d %H:%M:%S')
         cday = cday - timedelta(minutes=5)
         time = cday.strftime('%H:%M:%S')

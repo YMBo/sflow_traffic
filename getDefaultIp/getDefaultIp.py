@@ -1,8 +1,9 @@
 # !/usr/local/bin/python
 # -*- coding: UTF-8 -*-
 import netifaces as ni
-from conf import NAME
 import sys
+sys.path.append("..")
+from conf import NAME
 from log import logger
 
 # ni.ifaddresses('eth0')
@@ -19,3 +20,6 @@ def getDefaultIp():
         logger.error("未获得网卡%s IP，错误信息：%s", NAME, e)
         sys.exit(1)
     return ip
+
+
+hostip = getDefaultIp()
